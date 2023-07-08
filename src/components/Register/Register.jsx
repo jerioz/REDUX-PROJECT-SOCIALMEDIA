@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import {register} from '../../features/auth/authSlice'
-import { useDispatch } from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import {register, reset} from '../../features/auth/authSlice'
+import { useDispatch, useSelector } from 'react-redux'
 import { Form, Input, Button } from 'antd';
 import './Register.styles.scss'
+import { notification } from "antd";
 
 
 const Register = () => {
@@ -17,6 +18,24 @@ const Register = () => {
 
     const dispatch = useDispatch()
 
+    const { isSuccess, message, isError, } = useSelector((state) => state.auth);
+    
+    useEffect(() => {
+        if (isSuccess) {
+            notification.success({
+                message: "Success",
+                description: message,
+            });
+        }
+        if (isError) {
+            notification.error({
+                message: "Error",
+                description: message,
+            })
+        }
+        dispatch(reset())
+}, [isSuccess, isError, message]);
+
     const onChange = (e)=>{
         setFormData((prevState)=> ({
             ...prevState,
@@ -27,8 +46,10 @@ const Register = () => {
     const onSubmit = (e) => {
         e.preventDefault()
         dispatch(register(formData))
-        console.log('formData',formData)
     }
+
+
+
     
     //  const onFinish = (values) => {
     //     register(values)
@@ -47,7 +68,7 @@ const Register = () => {
     </form>
 //     <div className="container">
 //     <h1>Register</h1>
-//     <Form
+//     <Form onSubmit={onSubmit}
 //     // name="basic"
 //     labelCol={{ span: 8 }}
 //     wrapperCol={{ span: 16 }}
@@ -60,7 +81,7 @@ const Register = () => {
         
 //         rules={[{ required: true, message: "Please input your name!" }]}
 //         >
-//             <Input value={name} onChange={onChange}/>
+//             <Input value={name} onFinish={onChange}/>
 //         </Form.Item>
 //         <Form.Item
 //         label="Age"
@@ -68,7 +89,7 @@ const Register = () => {
         
 //         rules={[{ required: true, message: "Please input your age!" }]}
 //         >
-//             <Input value={age} onChange={onChange}/>
+//             <Input value={age} onFinish={onChange}/>
 //         </Form.Item>
 //         <Form.Item
 //         label="Email"
@@ -76,7 +97,7 @@ const Register = () => {
        
 //         rules={[{ required: true, message: "Please input your email!" }]}
 //         >
-//             <Input value={email} onChange={onChange}/>
+//             <Input value={email} onFinish={onChange}/>
 //         </Form.Item>
 //         <Form.Item
 //         label="Password"
@@ -84,7 +105,7 @@ const Register = () => {
        
 //         rules={[{ required: true, message: "Please input your password!" }]}
 //         >
-//             <Input.Password value={password} onChange={onChange}/>
+//             <Input.Password value={password} onFinish={onChange}/>
 //         </Form.Item>
 //         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
 //             <Button type="primary" htmlType="submit" onClick={onSubmit}>

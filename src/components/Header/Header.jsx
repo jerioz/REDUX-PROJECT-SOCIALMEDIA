@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './Header.styles.scss'
-import { Menu, } from 'antd'
+import { Menu, notification, } from 'antd'
 import { LoginOutlined, HomeOutlined, UserAddOutlined, LogoutOutlined, UserOutlined } from '@ant-design/icons'
 import { useDispatch, useSelector } from "react-redux";
-import {logout} from '../../features/auth/authSlice' 
+import { logout, reset } from '../../features/auth/authSlice' 
 
 
 
@@ -13,14 +13,23 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { user } = useSelector((state) => state.auth);
+  const { user, isSuccess, message } = useSelector((state) => state.auth);
 
-  const onLogout = (e) => {
-    // e.preventDefault();
-    dispatch(logout());
-    navigate("/login");
-    
-    };
+  const onLogout = () => {
+
+  dispatch(logout())
+      navigate('/login');
+   
+  };
+
+  useEffect(() => {
+    if(isSuccess) {
+      notification.success({message: 'Success', description: message})
+    }
+    dispatch(reset())
+  }, [isSuccess, message])
+
+
   return (
     <>
     <header className='header__socialPage'>

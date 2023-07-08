@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { login } from '../../features/auth/authSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { login, reset } from '../../features/auth/authSlice'
 import { useNavigate } from 'react-router-dom'
+import { notification } from "antd";
+
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -9,8 +11,6 @@ const Login = () => {
         password:''
     })
     
-    const navigate = useNavigate()
-
     const {email,password} = formData
     
     const onChange = (e)=>{
@@ -21,19 +21,29 @@ const Login = () => {
     }
 
     const dispatch = useDispatch()
+
+    const navigate = useNavigate()
+
+    const { isError, isSuccess, message, user } = useSelector((state) => state.auth);
+    
+    useEffect(() => {
+        if (isError) {
+            notification.error({ message: "Error", description: message });
+           
+        }
+        if (isSuccess && user) {
+            notification.success({ message: "Success", description: message });
+        setTimeout(() => {
+            navigate('/profile');
+        }, 500);
+      
+    }
+    dispatch(reset())
+    }, [isError, isSuccess, message]);
     
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log('formData',formData)
         dispatch(login(formData))
-        setTimeout(() => {
-			const foundToken = JSON.parse(localStorage.getItem('token'))
-			if (foundToken) {
-				navigate('/profile')
-			}
-		}, 500)
-      
-
     }
    
     
