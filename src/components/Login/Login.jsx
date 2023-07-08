@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { login } from '../../features/auth/authSlice'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -6,6 +9,8 @@ const Login = () => {
         password:''
     })
     
+    const navigate = useNavigate()
+
     const {email,password} = formData
     
     const onChange = (e)=>{
@@ -14,16 +19,28 @@ const Login = () => {
             [e.target.name]:e.target.value,
         }))
     }
+
+    const dispatch = useDispatch()
     
     const onSubmit = (e) => {
         e.preventDefault()
         console.log('formData',formData)
+        dispatch(login(formData))
+        setTimeout(() => {
+			const foundToken = JSON.parse(localStorage.getItem('token'))
+			if (foundToken) {
+				navigate('/profile')
+			}
+		}, 500)
+      
+
     }
+   
     
     return (
     <form onSubmit={onSubmit}>
-        <input type="email" name="email" value={email} onChange={onChange}/>
-        <input type="password" name="password" value={password} onChange={onChange}/>
+        <input type="email" name="email" value={email} onChange={onChange} placeholder='email'/>
+        <input type="password" name="password" value={password} onChange={onChange} placeholder='password'/>
         <button type="submit">Login</button>
     </form>
     )
