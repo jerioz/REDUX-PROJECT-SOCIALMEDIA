@@ -29,7 +29,6 @@ const Login = () => {
     useEffect(() => {
         if (isError) {
             notification.error({ message: "Error", description: message });
-           
         }
         if (isSuccess && user) {
             notification.success({ message: "Success", description: message });

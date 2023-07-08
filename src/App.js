@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Header />
         <Routes>
-          <Route path='/register' element={<RegisterView />} />
+          <Route path='/' element={<RegisterView />} />
           <Route path='/login' element={<LoginView />} />
           <Route path='/profile' element={<ProfileView />} />
         </Routes> 

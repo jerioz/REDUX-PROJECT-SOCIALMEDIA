@@ -39,7 +39,7 @@ const Header = () => {
 				{user ? (
          <>
          <Menu.Item key="home" icon={<HomeOutlined />}>
-         <Link to="/">Home</Link>
+         <Link to="/home">Home</Link>
        </Menu.Item>
          <Menu.Item key="logout" onClick={onLogout} icon={<LogoutOutlined />}>
            <Link to="/logout">Logout</Link>
@@ -52,7 +52,7 @@ const Header = () => {
        
              <>
              <Menu.Item key="register" icon={<UserAddOutlined />}>
-               <Link to="/register">Register</Link>
+               <Link to="/">Register</Link>
              </Menu.Item>
                <Menu.Item key="login" icon={<LoginOutlined />}>
                  <Link to="/login">Login</Link>
