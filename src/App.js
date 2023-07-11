@@ -6,6 +6,7 @@ import LoginView from './views/LoginView/LoginView';
 import ProfileView from './views/ProfileView/ProfileView';
 import HomeView from './views/HomeView/HomeView';
 import PostDetailView from './views/PostDetailView/PostDetailView';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/home' element={<HomeView />} />
           <Route path='/post/:id' element={<PostDetailView />} />
         </Routes> 
+        <Footer />
     </BrowserRouter>
    </>
   );

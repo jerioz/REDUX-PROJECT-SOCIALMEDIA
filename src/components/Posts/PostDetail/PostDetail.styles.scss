@@ -1,0 +1,16 @@
+.postDetail {
+    &__container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+    &__title {
+        text-align: center;
+    }
+    &__card {
+        border-radius: 10px;
+        border-color: black;
+        border-style: solid;
+        text-align: center;
+    }
+}

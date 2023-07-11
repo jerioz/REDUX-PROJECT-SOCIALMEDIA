@@ -1,0 +1,11 @@
+.posts {
+    &__title {
+        text-align: center;
+    }
+    &__container {
+        min-height: 100vh;
+        text-align: justify;
+        padding: 20px;
+        margin: 20px;
+    }
+}

@@ -1,0 +1,16 @@
+.profile {
+    &__container {
+        text-align: center;
+        min-height: 100vh;
+
+      
+    }
+    &__card {
+        border-radius: 10px;
+        border-color: black;
+        border-style: solid;
+        background-color: whitesmoke;
+        
+      
+    }
+}

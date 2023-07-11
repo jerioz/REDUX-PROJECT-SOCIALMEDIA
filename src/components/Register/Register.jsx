@@ -6,12 +6,14 @@ import './Register.styles.scss'
 import { notification } from "antd";
 
 
+
 const Register = () => {
     const [formData, setFormData] = useState({
         name:'',
         email:'',
         password:'',
-        age:''
+        age:'',
+       
     })
 
     const {name,email,password, age} = formData
@@ -59,13 +61,18 @@ const Register = () => {
     //     console.log("Failed:", errorInfo);
     //     };
     return (
-    <form onSubmit={onSubmit}>
-        <input type="text" name="name" value={name} onChange={onChange} placeholder='name' />
-        <input type="email" name="email" value={email} onChange={onChange}  placeholder='email'/>
-        <input type="password" name="password" value={password} onChange={onChange}  placeholder='password'/>
-        <input type="number" name="age" value={age} onChange={onChange}  placeholder='age'/>
-        <button type="submit">Register</button>
+        <>
+        <div className='Register__container'>
+        <h1 className='Register__title'>Register</h1>
+    <form className='Register__form' onSubmit={onSubmit}>
+        <input type="text" name="name" value={name} onChange={onChange} placeholder='name' className='Register__input' />
+        <input type="email" name="email" value={email} onChange={onChange}  placeholder='email' className='Register__input'/>
+        <input type="password" name="password" value={password} onChange={onChange}  placeholder='password' className='Register__input'/>
+        <input type="number" name="age" value={age} onChange={onChange}  placeholder='age' className='Register__input'/>
+        <button type="submit" className='Register__button'>Register</button>
     </form>
+    </div>
+    </>
 //     <div className="container">
 //     <h1>Register</h1>
 //     <Form onFinish={onChange}

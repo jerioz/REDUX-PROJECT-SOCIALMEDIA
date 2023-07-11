@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import Post from '../Posts/Post/Post'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAll, reset } from '../../features/posts/postsSlice'
+import './Posts.styles.scss'
+import { Spin } from 'antd'
 
 
 const Posts = () => {
@@ -18,12 +20,12 @@ const Posts = () => {
 
   return (
     <>
-    <h1>Posts</h1>
+    <h1 className='posts__title'>Posts</h1>
     
     {isLoading ? ( 
-      'Cargando...' 
+      <Spin size="large" /> 
     ) : (
-      <section>
+      <section className='posts__container'>
     {posts && posts.map((post) => (
         <Post key={post._id} title={post.title} content={post.content} id={post._id}/>
     ))}

@@ -1,6 +1,9 @@
-.Register {
+.login {
     &__container {
         min-height: 100vh;
+    }
+    &__title {
+        text-align: center;
     }
     &__form {
         width:300px;
@@ -8,9 +11,6 @@
 	    border-radius:10px;
 	    margin:auto;
         height: 100%;
-    }
-    &__title {
-        text-align: center;
     }
     &__input {
         width:300px;
