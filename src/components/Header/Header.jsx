@@ -36,6 +36,7 @@ const Header = () => {
         <h1 className='header__socialPage-title'>Expecting Rain Discussion</h1> 
         <nav>
             <Menu mode="horizontal" className='menu-nav__menu' defaultSelectedKeys={['profile']}>
+           
 				{user ? (
          <>
          <Menu.Item key="home" icon={<HomeOutlined />}>

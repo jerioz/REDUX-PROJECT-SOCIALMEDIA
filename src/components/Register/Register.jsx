@@ -68,12 +68,12 @@ const Register = () => {
     </form>
 //     <div className="container">
 //     <h1>Register</h1>
-//     <Form onSubmit={onSubmit}
-//     // name="basic"
+//     <Form onFinish={onChange}
+//     name="basic"
 //     labelCol={{ span: 8 }}
 //     wrapperCol={{ span: 16 }}
 //     // initialValues={{ remember: true }}
-//     // autoComplete="off"
+//     autoComplete="off"
 //     >
 //         <Form.Item
 //         label="Name"
@@ -81,7 +81,7 @@ const Register = () => {
         
 //         rules={[{ required: true, message: "Please input your name!" }]}
 //         >
-//             <Input value={name} onFinish={onChange}/>
+//             <Input value={name} />
 //         </Form.Item>
 //         <Form.Item
 //         label="Age"
@@ -89,7 +89,7 @@ const Register = () => {
         
 //         rules={[{ required: true, message: "Please input your age!" }]}
 //         >
-//             <Input value={age} onFinish={onChange}/>
+//             <Input value={age} />
 //         </Form.Item>
 //         <Form.Item
 //         label="Email"
@@ -97,7 +97,7 @@ const Register = () => {
        
 //         rules={[{ required: true, message: "Please input your email!" }]}
 //         >
-//             <Input value={email} onFinish={onChange}/>
+//             <Input value={email} />
 //         </Form.Item>
 //         <Form.Item
 //         label="Password"
@@ -105,10 +105,10 @@ const Register = () => {
        
 //         rules={[{ required: true, message: "Please input your password!" }]}
 //         >
-//             <Input.Password value={password} onFinish={onChange}/>
+//             <Input.Password value={password} />
 //         </Form.Item>
 //         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-//             <Button type="primary" htmlType="submit" onClick={onSubmit}>
+//             <Button type="primary" htmlType="submit" onFinish={onSubmit}>
 //             Submit
 //             </Button>
 //         </Form.Item>
