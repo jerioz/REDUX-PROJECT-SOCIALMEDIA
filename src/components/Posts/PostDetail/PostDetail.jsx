@@ -23,6 +23,12 @@ const PostDetail = () => {
         style={{
         width: 800,
         }}
+        cover={
+          <img
+            alt="photo"
+            src={post.image}
+            style={{height: 300}}
+            />}
       >
         <p>{post.content}</p>
         </Card>

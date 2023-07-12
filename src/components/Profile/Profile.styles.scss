@@ -2,8 +2,10 @@
     &__container {
         text-align: center;
         min-height: 100vh;
-
-      
+    }
+    &__container-card {
+        display: flex;
+        justify-content: center;
     }
     &__card {
         border-radius: 10px;
