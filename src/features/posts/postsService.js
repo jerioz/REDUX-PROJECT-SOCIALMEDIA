@@ -12,9 +12,15 @@ const getById = async (id) => {
     return res.data
 }
 
+const getByName = async (title) => {
+    const res = await axios.get(`${API_URL}/posts/getByTitle/${title}`)
+    return res.data
+}
+
 const postService = {
     getAll,
     getById,
+    getByName,
 }
 
 export default postService

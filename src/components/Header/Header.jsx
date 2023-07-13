@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './Header.styles.scss'
 import { Menu, notification, } from 'antd'
-import { LoginOutlined, HomeOutlined, UserAddOutlined, LogoutOutlined, UserOutlined } from '@ant-design/icons'
+import { LoginOutlined, HomeOutlined, UserAddOutlined, LogoutOutlined, UserOutlined, KeyOutlined } from '@ant-design/icons'
 import { useDispatch, useSelector } from "react-redux";
 import { logout, reset } from '../../features/auth/authSlice' 
-
+import { useState } from 'react'
 
 
 const Header = () => {
@@ -30,10 +30,13 @@ const Header = () => {
   }, [isSuccess, message])
 
 
+
+
   return (
     <>
     <header className='header__socialPage'>
         <h1 className='header__socialPage-title'>Expecting Rain Discussion</h1> 
+        
         <nav>
             <Menu mode="horizontal" className='menu-nav__menu' defaultSelectedKeys={['profile']}>
            
@@ -48,6 +51,10 @@ const Header = () => {
          <Menu.Item key="profile" icon={<UserOutlined />}>
 						<Link to="/profile">{user.name}</Link>
 					</Menu.Item>
+          <Menu.Item key="search" icon={<KeyOutlined />}>
+         <Link to="/search/:title">Search</Link>
+       </Menu.Item>
+     
          </>
         ) : (
        

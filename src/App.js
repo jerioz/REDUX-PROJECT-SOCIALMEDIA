@@ -7,6 +7,7 @@ import ProfileView from './views/ProfileView/ProfileView';
 import HomeView from './views/HomeView/HomeView';
 import PostDetailView from './views/PostDetailView/PostDetailView';
 import Footer from './components/Footer/Footer';
+import SearchView from './views/SearchView/SearchView';
 
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/profile' element={<ProfileView />} />
           <Route path='/home' element={<HomeView />} />
           <Route path='/post/:id' element={<PostDetailView />} />
+          <Route path='/search/:title' element={<SearchView />} />
         </Routes> 
         <Footer />
     </BrowserRouter>
