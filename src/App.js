@@ -28,9 +28,9 @@ function App() {
             element= {
             <PrivateZone><ProfileView /></PrivateZone>
             } />
-          <Route path='/home' element={<HomeView />} />
-          <Route path='/post/:id' element={<PostDetailView />} />
-          <Route path='/search/:title' element={<SearchView />} />
+          <Route path='/home' element={<PrivateZone><HomeView /></PrivateZone>} />
+          <Route path='/post/:id' element={<PrivateZone><PostDetailView /></PrivateZone>} />
+          <Route path='/search/:title' element={<PrivateZone><SearchView /></PrivateZone>} />
           <Route path='*' element={<NotFoundView />} />
         </Routes> 
         <Footer />
