@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Post from '../Posts/Post/Post'
 import { useNavigate } from 'react-router-dom'
 import './Search.styles.scss'
+import { Input } from 'antd'
 
 
 const Search = () => {
@@ -24,7 +25,6 @@ const {posts} = useSelector((state) => state.posts)
     const [text, setText] = useState("");
 
     const handleChange = (e) => {
-      setText(e.target.value)
       if (e.key === "Enter") {
         navigate(`/search/${text}`)
       }
@@ -34,11 +34,25 @@ const {posts} = useSelector((state) => state.posts)
     <>
     <h1 className='search__title'>Search Posts</h1>
     <div className='search__container'>
-    <input onKeyUp={handleChange} placeholder="search post" name="text"  className='search__input'/>
+      <div className='search__container-search'>
+    {/* <input onKeyUp={handleChange} placeholder="search post" name="text"  className='search__input'/> */}
+    <Input placeholder="search post"
+            value={text}
+            className='search__input'
+            allowClear
+            enterButton='search post'
+            onChange={(e) =>  setText(e.target.value)}
+            onKeyPress={handleChange}
+            />
+      </div>
+           
    {posts && posts.map((post) => (
     <Post key={post._id} title={post.title} content={post.content} id={post._id}/>
    ))}
-   </div>
+      </div>
+
+  
+
     </>
   )
 }

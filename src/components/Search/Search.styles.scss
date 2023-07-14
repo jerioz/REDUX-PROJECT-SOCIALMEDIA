@@ -6,13 +6,12 @@
         min-height: 100vh;
         text-align: center;
     }
+    &__container-search {
+      display: flex;
+      justify-content: center;
+    
+    } 
     &__input {
-        width:300px;
-        padding:10px 10px;
-        border:1px solid black;
-        border-radius:3px;
-        background-color:#f6f6f6;
-        margin:8px 0;
-        display:inline-block;
+        width: 500px;
     }
 }
