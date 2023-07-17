@@ -2,12 +2,12 @@ import React, {useState} from 'react'
 import { Form, Input, Button} from 'antd'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import {newPost} from '../../features/posts/postsSlice'
-import './FormPost.styles.scss'
+import {newPost} from '../../../features/posts/postsSlice'
+import './NewPost.styles.scss'
 
 const {TextArea} = Input
 
-const FormPost = () => {
+const NewPost = () => {
 
     const [postData, setPostData] = useState({
         title:'',
@@ -79,4 +79,4 @@ const FormPost = () => {
   )
 }
 
-export default FormPost
+export default NewPost

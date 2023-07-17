@@ -1,10 +1,11 @@
 import React from 'react'
-import FormPost from '../../components/FormPost/FormPost'
+import NewPost from '../../components/Posts/NewPost/NewPost'
+
 
 const NewPostView = () => {
   return (
     <>
-    <FormPost />
+    <NewPost />
     </>
   )
 }
