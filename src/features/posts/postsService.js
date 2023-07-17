@@ -17,10 +17,22 @@ const getByName = async (title) => {
     return res.data
 }
 
+const newPost = async (postData) => {
+    const token = JSON.parse(localStorage.getItem("token"))
+    const res = await axios.post(`${API_URL}/posts/newPost`, postData, {
+        headers: {
+            authorization: token,
+        },
+    })
+    
+    return res.data
+}
+
 const postService = {
     getAll,
     getById,
     getByName,
+    newPost,
 }
 
 export default postService

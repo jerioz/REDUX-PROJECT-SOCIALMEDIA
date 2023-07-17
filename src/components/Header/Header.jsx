@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './Header.styles.scss'
 import { Menu, notification, } from 'antd'
-import { LoginOutlined, HomeOutlined, UserAddOutlined, LogoutOutlined, UserOutlined, KeyOutlined } from '@ant-design/icons'
+import { LoginOutlined, HomeOutlined, UserAddOutlined, LogoutOutlined, UserOutlined, KeyOutlined, FileAddOutlined } from '@ant-design/icons'
 import { useDispatch, useSelector } from "react-redux";
 import { logout, reset } from '../../features/auth/authSlice' 
 import { useState } from 'react'
@@ -53,6 +53,9 @@ const Header = () => {
 					</Menu.Item>
           <Menu.Item key="search" icon={<KeyOutlined />}>
          <Link to="/search/:title">Search</Link>
+       </Menu.Item>
+       <Menu.Item key="newPost" icon={<FileAddOutlined />}>
+         <Link to="/newPost">New Post</Link>
        </Menu.Item>
      
          </>
