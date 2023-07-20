@@ -32,7 +32,7 @@ const Profile = () => {
     </div>
     <h2>Posts</h2>
     <div key={post.id}>
-    {user && user === post.userId &&
+    {post.userId === user &&
 post.map((post) => (
   <p>{post.title}</p>
 ))}

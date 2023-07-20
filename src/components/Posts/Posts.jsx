@@ -27,7 +27,9 @@ const Posts = () => {
     ) : (
       <section className='posts__container'>
     {posts && posts.map((post) => (
+      <div className='posts__post'>
         <Post key={post._id} title={post.title} content={post.content} id={post._id}/>
+      </div>
     ))}
     </section>
     )}
