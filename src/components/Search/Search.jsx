@@ -47,7 +47,9 @@ const {posts} = useSelector((state) => state.posts)
       </div>
            
    {posts && posts.map((post) => (
+    <div className='search__post'>
     <Post key={post._id} title={post.title} content={post.content} id={post._id}/>
+    </div>
    ))}
       </div>
 

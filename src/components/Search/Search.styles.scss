@@ -5,6 +5,7 @@
     &__container {
         min-height: 100vh;
         text-align: center;
+        margin: 20px;
     }
     &__container-search {
       display: flex;
@@ -13,5 +14,13 @@
     } 
     &__input {
         width: 500px;
+        margin-bottom: 20px;
+    }
+    &__post {
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
     }
 }
