@@ -9,27 +9,27 @@ const {TextArea} = Input
 
 const NewPost = () => {
 
-    const [postData, setPostData] = useState({
-        title:'',
-        content:'',
-    })
+    // const [postData, setPostData] = useState({
+    //     title:'',
+    //     content:'',
+    // })
 
-    const {title, content} = postData
+    // const {title, content} = postData
 
     const dispatch = useDispatch()
 
     const navigate = useNavigate()
 
-    const onChange = (e) => {
-        const name = e.target.id.split('_')[1]
-        setPostData((prevState) => ({
-            ...prevState,
-            [name]: e.target.value
-        }))
-    }
+    // const onChange = (e) => {
+    //     const name = e.target.id.split('_')[1]
+    //     setPostData((prevState) => ({
+    //         ...prevState,
+    //         [name]: e.target.value
+    //     }))
+    // }
 
     const onFinish = (values) => {
-        dispatch(newPost(postData))
+        dispatch(newPost(values))
         navigate('/home')
     }
 
@@ -55,7 +55,7 @@ const NewPost = () => {
         name="title"
         
         rules={[{ required: true, message: "Please input your title!" }]}
-        onChange={onChange}
+        // onChange={onChange}
         >
             <Input  allowClear/>
         </Form.Item>
@@ -64,7 +64,7 @@ const NewPost = () => {
         name="content"
         
         rules={[{ required: true, message: "Please input your content!" }]}
-        onChange={onChange}
+        // onChange={onChange}
         >
              <TextArea rows={10} allowClear/>
         </Form.Item>

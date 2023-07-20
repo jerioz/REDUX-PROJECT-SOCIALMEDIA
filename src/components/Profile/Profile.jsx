@@ -6,6 +6,7 @@ const {Meta} = Card
 
 const Profile = () => {
     const { user } = useSelector((state) => state.auth);
+    const { post } = useSelector((state) => state.posts)
     return (
     <>
    
@@ -29,6 +30,13 @@ const Profile = () => {
         />
     </Card>
     </div>
+    <h2>Posts</h2>
+    <div key={post.id}>
+    {user && user === post.userId &&
+post.map((post) => (
+  <p>{post.title}</p>
+))}
+</div>
     </div>
     </>
     );
