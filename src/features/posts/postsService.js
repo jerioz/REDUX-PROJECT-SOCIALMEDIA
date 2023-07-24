@@ -48,6 +48,16 @@ const updatePost = async (post, id) => {
     return res.data
 }
 
+const newCommentPost = async (post, id) => {
+    const token = JSON.parse(localStorage.getItem("token"))
+    const res = await axios.put(API_URL + "/posts/newCommentPost/"+ post.id, post, {
+        headers: {
+            authorization: token,
+        },  
+    })
+    return res.data
+}
+
 const postService = {
     getAll,
     getById,
@@ -55,6 +65,7 @@ const postService = {
     newPost,
     deletePost,
     updatePost,
+    newCommentPost,
 }
 
 export default postService

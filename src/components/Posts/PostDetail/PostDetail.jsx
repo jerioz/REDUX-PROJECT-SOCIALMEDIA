@@ -7,21 +7,27 @@ import { Card, Space, Button } from 'antd'
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons"
 import { deletePost } from '../../../features/posts/postsSlice'
 import EditPost from '../Post/EditPost/EditPost'
+import AddComment from '../AddComment/AddComment'
 
 const PostDetail = () => {
     const {post} = useSelector((state) => state.posts)
     const {id} = useParams()
     const dispatch = useDispatch()
     const [isModalVisible, setIsModalVisible] = useState(false)
+    const [isCommentVisible, setIsCommentVisible] = useState(false)
 
     useEffect(() => {
         dispatch(getById(id))
     }, [])
 
     const showModal = (id) => {
-      console.log(id)
       dispatch(getById(id))
       setIsModalVisible(true)
+    }
+
+    const showModalComment = (id) => {
+      dispatch(getById(id))
+      setIsCommentVisible(true)
     }
 
 
@@ -47,11 +53,15 @@ const PostDetail = () => {
         {post.comments && post.comments.map((comment) => (
           <p>{comment.comment}</p>
         ))}
-        <Button type="primary" htmlType="submit" danger icon={<DeleteOutlined />} onClick={() => dispatch(deletePost(post._id))} >DeletePost</Button>
-        <Button type="primary" htmlType="submit" icon={<EditOutlined />} onClick={() => showModal(post._id)}>UpdatePost</Button>
+        <div>
+        <Button type="primary" className='postDetail__button' htmlType="submit" icon={<EditOutlined />} onClick={() => showModalComment(post._id)}>AddComment</Button>
+        <Button type="primary" className='postDetail__button' htmlType="submit" danger icon={<DeleteOutlined />} onClick={() => dispatch(deletePost(post._id))} >DeletePost</Button>
+        <Button type="primary" className='postDetail__button' htmlType="submit" icon={<EditOutlined />} onClick={() => showModal(post._id)}>UpdatePost</Button>
+        </div>
         </Card>
       </Space>
       <EditPost visible={isModalVisible} setVisible={setIsModalVisible} />
+      <AddComment visible={isCommentVisible} setVisible={setIsCommentVisible} />
     </div>
     </>
   )

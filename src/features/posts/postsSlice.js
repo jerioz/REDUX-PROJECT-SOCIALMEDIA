@@ -55,6 +55,14 @@ export const updatePost = createAsyncThunk('/posts/updatePost', async (post) => 
     }
 })
 
+export const newCommentPost = createAsyncThunk('/posts/newCommentPost', async (post) => {
+    try {
+        return await postService.newCommentPost(post)
+    } catch (error) {
+        
+    }
+})
+
 export const postSlice = createSlice({
     name: 'posts',
     initialState,
@@ -86,6 +94,15 @@ export const postSlice = createSlice({
                 )
             })
             .addCase(updatePost.fulfilled, (state, action) => {
+                const posts = state.posts.map((post) => {
+                    if(post._id === action.payload.id) {
+                        post = action.payload
+                    }
+                    return post
+                })
+                state.posts = posts
+            })
+            .addCase(newCommentPost.fulfilled, (state, action) => {
                 const posts = state.posts.map((post) => {
                     if(post._id === action.payload.id) {
                         post = action.payload

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Post from '../Posts/Post/Post'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAll, reset } from '../../features/posts/postsSlice'
@@ -6,9 +6,12 @@ import './Posts.styles.scss'
 import { Spin } from 'antd'
 
 
+
 const Posts = () => {
     const dispatch = useDispatch()
     const {posts, isLoading} = useSelector((state) => state.posts)
+
+
 
     useEffect(() => {
        async function getData() {
@@ -20,6 +23,7 @@ const Posts = () => {
 
   return (
     <>
+    <div>
     <h1 className='posts__title'>Posts</h1>
     
     {isLoading ? ( 
@@ -33,6 +37,7 @@ const Posts = () => {
     ))}
     </section>
     )}
+    </div>
     </>
   )
 }

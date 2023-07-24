@@ -12,6 +12,7 @@ const EditPost = ({visible, setVisible}) => {
     const [form] = Form.useForm()
 
     const dispatch = useDispatch()
+    
 
     useEffect(() => {
         form.setFieldsValue(post)
