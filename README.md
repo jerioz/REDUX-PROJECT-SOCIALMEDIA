@@ -1,46 +1,125 @@
-# Getting Started with Create React App and Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+PROJECT: RED SOCIAL WITH REACT.
 
-## Available Scripts
+Development of one Red Social where the users can register, log in, see the publications, edit them, delete them, add comments, search...
 
-In the project directory, you can run:
+We will develop it using Redux from React.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install my project with npm.
+We start the project with React installing
+redux.
 
-### `npm run build`
+```bash
+  npx create-react-app redux-project --template redux
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We installed the VSC extension for React. It will help us a lot.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
+```
+We installed Redux Dvtools in Google Chrome.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibf
+kpmmfibljd?hl=es
+```
 
-### `npm run eject`
+We will install the dependencies that we need for this project.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+  npm install sass
+  npm install react-router-dom@6
+  npm i axios  
+  npm i antd
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To avoid having to start the project all the time.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  npm start
+```
+If all goes well, the following will appear:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+> redux-project-socialmedia@0.1.0 start
+Compiled successfully!
 
-## Learn More
+You can now view redux-project-socialmedia in the browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.43.36:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+```
+
+
+
+
+
+
+## Description
+
+What we will develop in the project will be the following:
+
+    ● User registration.
+    ● User login.
+    ● That you can see the publication and create new ones.
+    ● That the publications made by the logged in user can be edited and deleted
+    ● Search engine for user profiles or posts
+    ● That in your profile you can see your data and your posts
+    ● That you can comment on the publications
+
+Implementation of a search bar to be able to obtain the posts by name.
+
+Implementation of guards and page not found.
+
+React Router implementation on the page.
+
+We will use SASS to finish the project.
+
+
+
+
+
+
+
+
+## Screenshots
+
+![App Screenshot](https://github.com/jerioz/REDUX-PROJECT-SOCIALMEDIA/blob/main/Captura%20de%20pantalla%20(29).png?raw=true)
+
+![App Screenshot](https://github.com/jerioz/REDUX-PROJECT-SOCIALMEDIA/blob/main/Captura%20de%20pantalla%20(30).png?raw=true)
+
+![App Screenshot](https://github.com/jerioz/REDUX-PROJECT-SOCIALMEDIA/blob/main/Captura%20de%20pantalla%20(31).png?raw=true)
+
+
+
+
+
+
+
+## Authors
+
+- [@jerioz](https://www.github.com/jerioz)
+
+
+## Badges
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
