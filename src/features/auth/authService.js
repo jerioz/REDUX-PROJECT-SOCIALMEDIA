@@ -29,6 +29,7 @@ const logout = async () => {
     return res.data;
 };
 
+
 const authService = {
     register,
     login,

@@ -9,24 +9,10 @@ const {TextArea} = Input
 
 const NewPost = () => {
 
-    // const [postData, setPostData] = useState({
-    //     title:'',
-    //     content:'',
-    // })
-
-    // const {title, content} = postData
-
     const dispatch = useDispatch()
 
     const navigate = useNavigate()
 
-    // const onChange = (e) => {
-    //     const name = e.target.id.split('_')[1]
-    //     setPostData((prevState) => ({
-    //         ...prevState,
-    //         [name]: e.target.value
-    //     }))
-    // }
 
     const onFinish = (values) => {
         dispatch(newPost(values))

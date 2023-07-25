@@ -10,7 +10,7 @@ import { Spin } from 'antd'
 const Posts = () => {
     const dispatch = useDispatch()
     const {posts, isLoading} = useSelector((state) => state.posts)
-
+  console.log(posts)
 
 
     useEffect(() => {
