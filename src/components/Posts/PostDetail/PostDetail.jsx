@@ -51,7 +51,9 @@ const PostDetail = () => {
         <p>{post.content}</p>
         <h3>Comments</h3>
         {post.comments && post.comments.map((comment) => (
+          <div key={comment._id}>
           <p>{comment.comment}</p>
+          </div>
         ))}
         <div>
         <Button type="primary" className='postDetail__button' htmlType="submit" icon={<EditOutlined />} onClick={() => showModalComment(post._id)}>AddComment</Button>
